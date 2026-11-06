@@ -18,7 +18,7 @@ public class mainSceneController {
     private TextField cityInput;
 
     @FXML
-    private TableView<?> empTable;
+    private TableView<Employee> empTable;
 
     @FXML
     private TableColumn<Employee, Integer> idCol;
@@ -69,6 +69,8 @@ public class mainSceneController {
 
         EmployeeRepository repo = new EmployeeRepository();
         List<Employee> empList = repo.readEmployee();
+
+        empTable.getItems().addAll(empList);
     }
 
 }
